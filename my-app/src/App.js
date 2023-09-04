@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import Contact from "./components/Contact";
+import About from "./components/About";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+export default function App() {
+
+  const [page, setPage] = useState("Home");
+
+  if (page === "Home") {
+    return (
+      <>
+        <Navbar setPage={setPage} />
+        <Home />
+      </>
+    );
+  } else if (page === "Contact Us") {
+    return (
+      <>
+        <Navbar setPage={setPage} />
+        <Contact />
+      </>
+    );
+  } else {
+    return (
+      <>
+        <Navbar setPage={setPage} />
+        <About />
+      </>
+    );
+  }
 }
-
-export default App;
