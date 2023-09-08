@@ -20,6 +20,8 @@ export default function Contact() {
   return (
     <section>
       <div className="container">
+        <div className="row">
+          <div className="col">
         <h2 className="text-center">Contact Us</h2>
           <form ref={form} onSubmit={sendEmail}>
             <input type="text"
@@ -34,6 +36,8 @@ export default function Contact() {
             <textarea name="message" cols="30" rows="10"></textarea>
             <button type="submit" className="btn btn-primary">Send Message</button>
           </form>
+      </div>
+      </div>
       </div>
     </section>
   )
